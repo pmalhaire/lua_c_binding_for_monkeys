@@ -3,14 +3,12 @@
 #include "lualib.h"
 #include "lauxlib.h"
 
-void hello_world_c()
-{
+static void hello_world_c() {
 	printf("hello world\n");
 	return;
 }
 
-static int lua_hello_world_from_c(lua_State *L)
-{
+static int lua_hello_world_from_c(lua_State *L) {
 	hello_world_c();
 	return 0;
 }
@@ -20,7 +18,7 @@ static const luaL_Reg hellolib[] = {
 {NULL,NULL}
 };
 
-LUALIB_API int luaopen_hello (lua_State *L) {
+int luaopen_hello(lua_State *L) {
 	luaL_newlib (L,hellolib); 
 	return 1;
 }
