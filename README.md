@@ -6,7 +6,7 @@ hello.c creates hello lib
 
 helloworld.lua calls hello world from c in lua
 ## Build & run
-using clang : 
+OSX 
 ```
 $clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup hello.c -o hello.so -I[my_path_to_lua]/include
 $[my_path_to_lua]/lua helloworld.lua
