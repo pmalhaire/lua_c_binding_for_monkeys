@@ -12,7 +12,7 @@ void hello_world_c()
 static int lua_hello_world_from_c(lua_State *L)
 {
 	hello_world_c();
-	return 1;
+	return 0;
 }
 
 static const luaL_Reg hellolib[] = {
