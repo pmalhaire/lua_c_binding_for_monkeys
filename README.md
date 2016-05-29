@@ -14,7 +14,7 @@ cd lua-5.3.2
 make macosx
 make local
 ```
-*note here we don't do make install to keep environement clean instead we do a local install*
+Note: *Here we don't do make install to keep environement clean. Instead we do a local install*
 
 *define lua env*
 
