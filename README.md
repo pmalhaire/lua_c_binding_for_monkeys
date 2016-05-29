@@ -6,17 +6,32 @@ using lua 5.3
 ## Example 1
 no variable passed from lua to C or the opposite just calling
 
-### env
+### get lua
+download lua from official page 
+https://www.lua.org/download.html
+
+extract it (fix name here it's lua 5.3.2)
+```
+tar -xzvf lua-5.3.2.tar.gz
+cd lua-5.3.2
+make macosx
+make local
+```
+*note here we don't do make install to keep environement clean instead we do a local install*
+
 *define lua env*
 
 create a variable to store lua path
 ```
-LUA_PATH=[my_path_to_lua]
+LUA_BIN_PATH=[my_path_to_lua]/install/bin
+LUA_INCLUDE_PATH=[my_path_to_lua]/install/include
 ```
+ex 
+> /home/toto/lua-5.3.2
 
 add lua path to path so we can execute lua command
 ```
-PATH=$LUA_PATH:$PATH
+PATH=$LUA_BIN_PATH:$PATH
 ```
 
 
@@ -24,7 +39,7 @@ OSX
 ### lua calls C
 build clib called by lua
 ```
-clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup hello.c -o hello.so -I$LUA_PATH
+clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup hello.c -o hello.so -I$LUA_INCLUDE_PATH
 ```
 run lua script calling path
 ```
@@ -35,7 +50,7 @@ lua helloworld.lua
 ### C calls lua
 build c executable calling lua script
 ```
-clang -DLUA_USE_APICHECK=1 -g hello_call_lua_from_c.c -o hello_c -I$LUA_PATH -L$LUA_PATH -llua
+clang -DLUA_USE_APICHECK=1 -g hello_call_lua_from_c.c -o hello_c -I$LUA_INCLUDE_PATH -L$LUA_BIN_PATH -llua
 ```
 run executable  
 it calls the lua script which calls C
@@ -49,7 +64,7 @@ using a c function that has a return value (a string here)
 
 build lua lib having the function returning a string
 ```
-clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup call_function.c -o call_function.so -I$LUA_PATH
+clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup call_function.c -o call_function.so -I$LUA_INCLUDE_PATH
 ```
 run the lua script printing the c string in lua
 ```
