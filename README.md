@@ -3,9 +3,6 @@ new to lua, and not that smart, making the simpliest example possible.
 
 using lua 5.3
 
-## Example 1
-no variable passed from lua to C or the opposite just calling
-
 ### get lua
 download lua from official page 
 https://www.lua.org/download.html
@@ -34,6 +31,8 @@ add lua path to path so we can execute lua command
 PATH=$LUA_BIN_PATH:$PATH
 ```
 
+## Example 1
+no variable passed from lua to C or the opposite just calling
 
 OSX
 ### lua calls C
