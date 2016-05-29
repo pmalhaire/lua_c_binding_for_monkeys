@@ -51,8 +51,7 @@ build lua lib having the function returning a string
 ```
 clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup call_function.c -o call_function.so -I$LUA_PATH
 ```
-run executable  
-it calls the lua script which calls C
+run the lua script printing the c string in lua
 ```
 lua hello_world_string.lua
 ```
