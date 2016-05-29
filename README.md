@@ -16,7 +16,7 @@ make local
 ```
 Note: *Here we don't do make install to keep environement clean. Instead we do a local install*
 
-*define lua env*
+### define lua env
 
 create a variable to store lua path
 ```
