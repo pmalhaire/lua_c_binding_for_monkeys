@@ -29,18 +29,32 @@ clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup hello.c -o hel
 run lua script calling path
 ```
 lua helloworld.lua
-hello world
-$
 ```
+>hello world
+
 ### C calls lua
 build c executable calling lua script
 ```
-$ clang -DLUA_USE_APICHECK=1 -g hello_call_lua_from_c.c -o hello_c -I$LUA_PATH -L$LUA_PATH -llua
+clang -DLUA_USE_APICHECK=1 -g hello_call_lua_from_c.c -o hello_c -I$LUA_PATH -L$LUA_PATH -llua
 ```
 run executable  
 it calls the lua script which calls C
 ```
-$ ./hello_c
-hello world
-$ 
+./hello_c
 ```
+>hello world
+
+## Example 2
+using a c function that has a return value (a string here)
+
+build lua lib having the function returning a string
+```
+clang -DLUA_USE_APICHECK=1 -g  --shared -undefined dynamic_lookup call_function.c -o call_function.so -I$LUA_PATH
+```
+run executable  
+it calls the lua script which calls C
+```
+lua hello_world_string.lua
+```
+result
+>hello world
