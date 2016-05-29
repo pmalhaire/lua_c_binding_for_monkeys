@@ -16,7 +16,7 @@ LUA_PATH=[my_path_to_lua]
 
 add lua path to path so we can execute lua command
 ```
-$PATH=$LUA_PATH:$PATH
+PATH=$LUA_PATH:$PATH
 ```
 
 
