@@ -22,6 +22,7 @@ create a variable to store lua path
 ```
 LUA_BIN_PATH=[my_path_to_lua]/install/bin
 LUA_INCLUDE_PATH=[my_path_to_lua]/install/include
+LUA_LIB_PATH=[my_path_to_lua]/install/lib
 ```
 ex for [my_path_to_lua]
 > /home/toto/lua-5.3.2
@@ -49,7 +50,7 @@ lua helloworld.lua
 ### C calls lua
 build c executable calling lua script
 ```
-clang -DLUA_USE_APICHECK=1 -g hello_call_lua_from_c.c -o hello_c -I$LUA_INCLUDE_PATH -L$LUA_BIN_PATH -llua
+clang -DLUA_USE_APICHECK=1 -g hello_call_lua_from_c.c -o hello_c -I$LUA_INCLUDE_PATH -L$LUA_LIB_PATH -llua
 ```
 run executable  
 it calls the lua script which calls C
