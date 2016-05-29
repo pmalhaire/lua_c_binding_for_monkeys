@@ -56,5 +56,4 @@ it calls the lua script which calls C
 ```
 lua hello_world_string.lua
 ```
-result
 >hello world
