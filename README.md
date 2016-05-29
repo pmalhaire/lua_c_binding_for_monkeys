@@ -11,7 +11,7 @@ no variable passed from lua to C or the opposite just calling
 
 create a variable to store lua path
 ```
-$LUA_PATH=[my_path_to_lua]
+LUA_PATH=[my_path_to_lua]
 ```
 
 add lua path to path so we can execute lua command
