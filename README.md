@@ -26,7 +26,7 @@ create a variable to store lua path
 LUA_BIN_PATH=[my_path_to_lua]/install/bin
 LUA_INCLUDE_PATH=[my_path_to_lua]/install/include
 ```
-ex 
+ex for [my_path_to_lua]
 > /home/toto/lua-5.3.2
 
 add lua path to path so we can execute lua command
